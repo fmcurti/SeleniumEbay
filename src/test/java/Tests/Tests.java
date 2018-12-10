@@ -25,8 +25,7 @@ public class Tests {
 	private WebDriver driver;
 	@BeforeMethod 
 	public void setUp() {
-		System.setProperty("webdriver.firefox.driver", "geckodriver");
-		System.setProperty("webdriver.chrome.driver", "chromedriver");
+		System.setProperty("webdriver.chrome.driver", "Driver/chromedriver");
 		ChromeOptions ChromeOptions = new ChromeOptions();
 	    ChromeOptions.addArguments("-incognito");
 	    driver = new ChromeDriver();
