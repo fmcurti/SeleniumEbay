@@ -40,11 +40,8 @@ public class EbaySearchPage {
 	}
 	
 	public void searchByLowestPrice(String product) {
-		/*Actions action = new Actions(driver);
-		//action.moveToElement(wait.until(ExpectedConditions.presenceOfElementLocated(sortDropDown))).perform();
-		wait.until(ExpectedConditions.presenceOfElementLocated(sortDropDown)).click();
-		wait.until(ExpectedConditions.presenceOfElementLocated(sortByPrice)).click();
-		//return driver.findElement(price).getText();*/
+		/* Navego a la pagina de busqueda con el parametro de * 
+		 * Ordenar por precio mas bajo en la url              */
 		driver.navigate().to("https://www.ebay.com/sch/i.html?_from=R40&_trksid=m570.l1313&_nkw="+product+"&_sacat=0&_sop=15");		
 	}
 	
@@ -71,11 +68,11 @@ public class EbaySearchPage {
 		for (int i = 0;i<5;i++) {
 			String precio = prices.get(i).getText();
 			int index = precio.indexOf(" ");
+			// Si el precio estaba en un rango agarro el primer precio, si no agarro todo el string
 			if (index != -1) {
 				precioParseado = Float.valueOf(precio.substring(0, index).replaceAll("[^\\.0123456789]",""));
 			} else {
 				precioParseado = Float.valueOf(precio.replaceAll("[^\\.0123456789]",""));
-
 			}
 				
 			productos.add(new Product(titles.get(i).getText(),precioParseado));
