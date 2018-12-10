@@ -46,8 +46,8 @@ public class Tests {
 		AssertSortedByPrice(lista);
 		lista.sort(new Comparator<Product>() {
 
-			public int compare(Product p1, Product p2) {
-				return p1.title.compareTo(p2.title);
+			public int compare(Product producto1, Product producto2) {
+				return producto1.title.compareTo(producto2.title);
 			}
 			
 		});
